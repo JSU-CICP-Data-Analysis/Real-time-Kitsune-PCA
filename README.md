@@ -1,3 +1,4 @@
+
 # Real-time-Kitsune-PCA
 This is a variation of the Kitsune network anomaly detection code, adapted for use with PCA dimension reduction, and real-time network data processing. Additional code for simulating real-time data streams from existing data is included.
 
@@ -6,7 +7,7 @@ Kitsune is an efficient, online anomaly detection algorithm based on an ensemble
 
 This repository contains the core components of the Kitsune system, including the machine learning model (KitNET), feature extraction, and a demonstration script (example.py) for both real-time and offline processing.
 
-Key Features 
+# Key Features 
 Online, Incremental Learning: Learns and adapts to network behavior on a per-sample basis without requiring large historical datasets.
 
 Ensemble of Autoencoders: Uses a lightweight ensemble of Denoising Autoencoders to learn the low-dimensional structure of network features.
@@ -19,49 +20,37 @@ Flexible Processing Modes: Supports both a real-time simulation mode for live da
 
 Dimensionality Reduction: Includes built-in support for Principal Component Analysis (PCA) to reduce the input feature space and a lightweight FeatureAttention mechanism to dynamically weight feature importance.
 
-Getting Started 
-Prerequisites
-Python 3.x
+# Getting Started 
+Prerequisites:
 
-NumPy
+* Python 3.x
+* NumPy
+* Pandas
+* Scapy
+* Tqdm
+* Cython
+* TShark  (Optional, for faster packet parsing)
 
-Pandas
+# Installation
+1. Clone the repository:
+```git clone [repository_url]```
+```cd [repository_folder]```
 
-Scapy
+2. Install dependencies:
+```pip install numpy pandas scapy tqdm Cython```
 
-Tqdm
-
-Cython
-
-(Optional) TShark for faster packet parsing
-
-Installation
-Clone the repository:
-
-Bash
-
-git clone [repository_url]
-cd [repository_folder]
-Install dependencies:
-
-Bash
-
-pip install numpy pandas scapy tqdm Cython
-Compile the Cython Module:
+3. Compile the Cython Module:
 The netStat.py module uses a Cython-compiled component for performance. You must build it first:
+```python setup.py build_ext --inplace```
 
-Bash
+4. Update the parameters
+See: [Configuration](#Configuration)
 
-python setup.py build_ext --inplace
-Running the Example
+5. Running the Example
 The example.py script serves as the main entry point for the system. It demonstrates how to use Kitsune in both real-time and offline modes.
-
 To run the script:
-
-Bash
-
-python example.py
-Configuration 
+```python example.py```
+# Configuration 
 All major parameters can be configured within the AppConfig class in example.py.
 
 RUN_REALTIME_SIMULATION: Set to True for real-time simulation using realtime_data_simulator.py or False for offline, chunked processing.
@@ -82,10 +71,8 @@ PCA_COMPONENTS: The number of components for PCA dimensionality reduction. Set t
 
 PCA_GRACE_PERIOD: The number of packets to use for fitting the PCA model.
 
-Project Structure 
-.
+# Project Structure 
 
-│   ├── __init__.py
 │   ├── AfterImage.py
 │   ├── chunked_kitsune.py
 │   ├── chunk_processor.py
@@ -97,19 +84,20 @@ Project Structure
 │   ├── realtime_data_simulator.py
 │   └── setup.py
 ├── kitnet/
-│   ├── __init__.py
+│   ├── \_\_init\_\_.py
 │   ├── corClust.py
 │   ├── dA.py
 │   ├── KitNET.py
 │   └── utils.py
 └── README.md
 
-Citation 
+# Citation 
 This code is based on the research paper:
 
 Yisroel Mirsky, Tomer Doitshman, Yuval Elovici, and Asaf Shabtai. "Kitsune: An Ensemble of Autoencoders for Online Network Intrusion Detection." In The 25th Annual Network and Distributed System Security Symposium (NDSS), 2018.
 
 If you use this code in your research, please cite the original paper.
+The original implementation is available at [Kitsune-py](https://github.com/ymirsky/Kitsune-py).
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+# License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for details.
