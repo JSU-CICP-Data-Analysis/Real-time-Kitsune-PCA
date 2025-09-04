@@ -32,24 +32,33 @@ Prerequisites:
 * TShark  (Optional, for faster packet parsing)
 
 # Installation
+
 1. Clone the repository:
-```git clone [repository_url]```
-```cd [repository_folder]```
+   ```bash
+   git clone [repository_url]
+   cd [repository_folder]
+   ```
 
 2. Install dependencies:
-```pip install numpy pandas scapy tqdm Cython```
+   ```bash
+   pip install numpy pandas scapy tqdm Cython
+   ```
 
-3. Compile the Cython Module:
-The netStat.py module uses a Cython-compiled component for performance. You must build it first:
-```python setup.py build_ext --inplace```
+3. Compile the Cython module:  
+   The `netStat.py` module uses a Cython-compiled component for performance. You must build it first:
+   ```bash
+   python setup.py build_ext --inplace
+   ```
 
-4. Update the parameters
-See: [Configuration](#Configuration)
+4. Update the parameters  
+   See: [Configuration](#configuration)
 
-5. Running the Example
-The example.py script serves as the main entry point for the system. It demonstrates how to use Kitsune in both real-time and offline modes.
-To run the script:
-```python example.py```
+5. Running the example  
+   The `example.py` script serves as the main entry point for the system. It demonstrates how to use Kitsune in both real-time and offline modes.  
+   To run the script:
+   ```bash
+   python example.py
+   ```
 # Configuration 
 All major parameters can be configured within the AppConfig class in example.py.
 
