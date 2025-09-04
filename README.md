@@ -94,7 +94,7 @@ PCA_GRACE_PERIOD: The number of packets to use for fitting the PCA model.
 │   ├── realtime_data_simulator.py
 │   └── setup.py
 ├── kitnet/
-│   ├── \_\_init\_\_.py
+│   ├── __init__.py
 │   ├── corClust.py
 │   ├── dA.py
 │   ├── KitNET.py
