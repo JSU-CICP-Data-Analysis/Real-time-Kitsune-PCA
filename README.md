@@ -82,6 +82,7 @@ PCA_GRACE_PERIOD: The number of packets to use for fitting the PCA model.
 
 # Project Structure 
 
+```text
 │   ├── AfterImage.py
 │   ├── chunked_kitsune.py
 │   ├── chunk_processor.py
@@ -99,6 +100,7 @@ PCA_GRACE_PERIOD: The number of packets to use for fitting the PCA model.
 │   ├── KitNET.py
 │   └── utils.py
 └── README.md
+```
 
 # Citation 
 This code is based on the research paper:
